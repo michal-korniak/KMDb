@@ -1,0 +1,6 @@
+﻿  Serializer.cpp
+c:\users\admin\source\repos\database\database\serializer.cpp(27): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\source\repos\database\database\serializer.cpp(33): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\source\repos\database\database\serializer.cpp(43): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\source\repos\database\database\serializer.cpp(46): warning C4018: '<': signed/unsigned mismatch
+  Database.vcxproj -> C:\Users\Admin\source\repos\Database\Debug\DatabaseC++.exe

@@ -1,0 +1,7 @@
+<table "Pracownicy">
+</table>
+<table "Studenci">
+Imie(String)|Nazwisko(String)|Rok(Number)
+Piotr|Adamiak|2
+Michal|Kowalski|1
+</table>
