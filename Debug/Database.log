@@ -1,6 +1,27 @@
-﻿  Serializer.cpp
-c:\users\admin\source\repos\database\database\serializer.cpp(27): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\source\repos\database\database\serializer.cpp(33): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\source\repos\database\database\serializer.cpp(43): warning C4018: '<': signed/unsigned mismatch
-c:\users\admin\source\repos\database\database\serializer.cpp(46): warning C4018: '<': signed/unsigned mismatch
-  Database.vcxproj -> C:\Users\Admin\source\repos\Database\Debug\DatabaseC++.exe
+﻿  stdafx.cpp
+  Table.cpp
+  Info: Boost.Config is older than your compiler version - probably nothing bad will happen - but you may wish to look for an update Boost version.  Define BOOST_CONFIG_SUPPRESS_OUTDATED_MESSAGE to suppress this message.
+c:\users\admin\source\repos\db\table.cpp(27): warning C4018: '>': signed/unsigned mismatch
+c:\users\admin\source\repos\db\table.cpp(29): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\source\repos\db\table.cpp(35): warning C4018: '<': signed/unsigned mismatch
+  Serializer.cpp
+  Info: Boost.Config is older than your compiler version - probably nothing bad will happen - but you may wish to look for an update Boost version.  Define BOOST_CONFIG_SUPPRESS_OUTDATED_MESSAGE to suppress this message.
+c:\users\admin\source\repos\db\serializer.cpp(27): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\source\repos\db\serializer.cpp(33): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\source\repos\db\serializer.cpp(43): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\source\repos\db\serializer.cpp(46): warning C4018: '<': signed/unsigned mismatch
+  Row.cpp
+  Info: Boost.Config is older than your compiler version - probably nothing bad will happen - but you may wish to look for an update Boost version.  Define BOOST_CONFIG_SUPPRESS_OUTDATED_MESSAGE to suppress this message.
+  Main.cpp
+  Info: Boost.Config is older than your compiler version - probably nothing bad will happen - but you may wish to look for an update Boost version.  Define BOOST_CONFIG_SUPPRESS_OUTDATED_MESSAGE to suppress this message.
+  Database.cpp
+  Info: Boost.Config is older than your compiler version - probably nothing bad will happen - but you may wish to look for an update Boost version.  Define BOOST_CONFIG_SUPPRESS_OUTDATED_MESSAGE to suppress this message.
+  ColumnTypes.cpp
+  ColumnType.cpp
+  Column.cpp
+  Info: Boost.Config is older than your compiler version - probably nothing bad will happen - but you may wish to look for an update Boost version.  Define BOOST_CONFIG_SUPPRESS_OUTDATED_MESSAGE to suppress this message.
+  Cell.cpp
+  Info: Boost.Config is older than your compiler version - probably nothing bad will happen - but you may wish to look for an update Boost version.  Define BOOST_CONFIG_SUPPRESS_OUTDATED_MESSAGE to suppress this message.
+  Generating Code...
+     Creating library C:\Users\Admin\source\repos\Db\Debug\DatabaseC++.lib and object C:\Users\Admin\source\repos\Db\Debug\DatabaseC++.exp
+  Database.vcxproj -> C:\Users\Admin\source\repos\Db\Debug\DatabaseC++.exe
