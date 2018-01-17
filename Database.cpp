@@ -1,9 +1,17 @@
 ﻿#include "stdafx.h"
 #include "Database.h"
+#include "FileSystem.h"
+
+Database::Database() {
+}
 
 Database::Database(const string& name)
 {
-	//walidacja czy baza o takiej nazwie juz nie istnieje
+	auto dbNames = FileSystem::getAllDbNames();
+	for(const auto dbName: dbNames) {
+		if (dbName == name)
+			throw runtime_error("Database with this name already exist");
+	}
 	this->name = name;
 }
 void Database::addTable(const Table& newTable)

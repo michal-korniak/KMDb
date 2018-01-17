@@ -13,6 +13,7 @@ class Database
 	string name;
 	vector<Table> tables;
 public:
+	Database();
 	Database(const string& name);
 	void addTable(const Table& newTable);
 	Table* getTable(const string& name);
