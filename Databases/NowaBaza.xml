@@ -4,7 +4,7 @@
 <s class_id="0" tracking_level="0" version="0">
 	<name>NowaBaza</name>
 	<tables class_id="1" tracking_level="0" version="0">
-		<count>2</count>
+		<count>4</count>
 		<item_version>0</item_version>
 		<item class_id="2" tracking_level="0" version="0">
 			<name>Pracownicy</name>
@@ -68,6 +68,52 @@
 						</item>
 					</cells>
 				</item>
+			</rows>
+		</item>
+		<item>
+			<name>Oceny</name>
+			<columns>
+				<count>3</count>
+				<item_version>0</item_version>
+				<item>
+					<name>IdStudenta</name>
+					<type>String</type>
+				</item>
+				<item>
+					<name>IdPracownika</name>
+					<type>String</type>
+				</item>
+				<item>
+					<name>Ocena</name>
+					<type>String</type>
+				</item>
+			</columns>
+			<rows>
+				<count>0</count>
+				<item_version>0</item_version>
+			</rows>
+		</item>
+		<item>
+			<name>Ochroniarze</name>
+			<columns>
+				<count>3</count>
+				<item_version>0</item_version>
+				<item>
+					<name>Imie</name>
+					<type>String</type>
+				</item>
+				<item>
+					<name>PrzespaneGodziny</name>
+					<type>Number</type>
+				</item>
+				<item>
+					<name>Nazwisko</name>
+					<type>String</type>
+				</item>
+			</columns>
+			<rows>
+				<count>0</count>
+				<item_version>0</item_version>
 			</rows>
 		</item>
 	</tables>
