@@ -3,6 +3,8 @@
 #include <boost/serialization/nvp.hpp>
 #include <boost/archive/xml_iarchive.hpp>
 
+class Column;
+
 using namespace std;
 class Cell
 {
@@ -10,6 +12,7 @@ class Cell
 public:
 	Cell(string value);
 	string getValue() const;
+	Column* column;
 private:
 	Cell() {}
 	friend class boost::serialization::access;

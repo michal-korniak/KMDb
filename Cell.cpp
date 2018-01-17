@@ -1,5 +1,6 @@
 ﻿#include "stdafx.h"
 #include "Cell.h"
+#include "Column.h"
 
 Cell::Cell(string value)
 {
@@ -10,3 +11,4 @@ string Cell::getValue() const
 {
 	return value;
 }
+

@@ -1,5 +1,9 @@
 ﻿#include "stdafx.h"
 #include "Table.h"
+#include <iostream>
+
+using namespace std;
+
 Table::Table(const string& name)
 {
 
@@ -10,17 +14,23 @@ string Table::getName() const
 	return name;
 }
 
-void Table::addColumn(const Column& newColumn)
+void Table::addColumn(Column& newColumn)
 {
 	for (auto column : columns)
 	{
 		if (column.getName() == newColumn.getName())
 			throw runtime_error("Column with this name already exist.");
 	}
+
+	if (columns.empty())
+		newColumn.index = 0;
+	else
+		newColumn.index = columns.back().index + 1;
+
+
+	newColumn.table = this;
 	columns.push_back(newColumn);
 }
-
-
 
 void Table::addRow(Row row)
 {
@@ -47,6 +57,24 @@ vector<Row> Table::getRows() const
 vector<Column> Table::getColumns() const
 {
 	return columns;
+}
+
+Column * Table::getColumn(const string & columnNameParam)
+{
+	for (auto& column : columns)
+	{
+		//Not worling correctly
+		/*if (column.getName() == name)
+			return &column;*/
+
+		string columnName = column.getName();
+
+		if (columnName.compare(columnNameParam) == 0)
+			return &column;
+
+	}
+
+	return nullptr;
 }
 
 

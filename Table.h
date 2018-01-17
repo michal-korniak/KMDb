@@ -15,11 +15,12 @@ class Table
 public:
 	Table(const string& name);
 	string getName() const;
-	void addColumn(const Column& column);
+	void addColumn(Column& column);
 	void verifyCompatibiltyWithType(const Column& column, const Cell& cell) const;
 	void addRow(Row row);
 	vector<Row> getRows() const;
 	vector<Column> getColumns() const;
+	Column* getColumn(const string& columnName);
 private:
 	Table() {}
 	friend class boost::serialization::access;

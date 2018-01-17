@@ -15,7 +15,7 @@ class Database
 public:
 	Database(const string& name);
 	void addTable(const Table& newTable);
-	Table& getTable(const string& name);
+	Table* getTable(const string& name);
 	string getName() const;
 	vector<Table> getTables() const;
 private:

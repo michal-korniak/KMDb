@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -23,7 +23,7 @@
     <ProjectGuid>{461010CC-7F15-49F6-B1AB-885C8693A660}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Database</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
     <ProjectName>DatabaseC++</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -154,10 +154,14 @@
     <ClInclude Include="ColumnTypes.h" />
     <ClInclude Include="Database.h" />
     <ClInclude Include="Row.h" />
+    <ClInclude Include="SearchHelper.h" />
+    <ClInclude Include="SearchResult.h" />
+    <ClInclude Include="SelectHelper.h" />
     <ClInclude Include="Serializer.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Table.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Utilities.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cell.cpp" />
@@ -167,6 +171,9 @@
     <ClCompile Include="Database.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Row.cpp" />
+    <ClCompile Include="SearchHelper.cpp" />
+    <ClCompile Include="SearchResult.cpp" />
+    <ClCompile Include="SelectHelper.cpp" />
     <ClCompile Include="Serializer.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -175,6 +182,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Table.cpp" />
+    <ClCompile Include="Utilities.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

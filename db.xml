@@ -4,25 +4,14 @@
 <s class_id="0" tracking_level="0" version="0">
 	<name>NowaBaza</name>
 	<tables class_id="1" tracking_level="0" version="0">
-		<count>2</count>
+		<count>1</count>
 		<item_version>0</item_version>
 		<item class_id="2" tracking_level="0" version="0">
 			<name>Pracownicy</name>
 			<columns class_id="3" tracking_level="0" version="0">
-				<count>0</count>
-				<item_version>0</item_version>
-			</columns>
-			<rows class_id="4" tracking_level="0" version="0">
-				<count>0</count>
-				<item_version>0</item_version>
-			</rows>
-		</item>
-		<item>
-			<name>Studenci</name>
-			<columns>
 				<count>3</count>
 				<item_version>0</item_version>
-				<item class_id="5" tracking_level="0" version="0">
+				<item class_id="4" tracking_level="0" version="0">
 					<name>Imie</name>
 					<type>String</type>
 				</item>
@@ -35,7 +24,7 @@
 					<type>Number</type>
 				</item>
 			</columns>
-			<rows>
+			<rows class_id="5" tracking_level="0" version="0">
 				<count>2</count>
 				<item_version>0</item_version>
 				<item class_id="6" tracking_level="0" version="0">

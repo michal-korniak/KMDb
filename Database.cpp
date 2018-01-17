@@ -18,15 +18,14 @@ void Database::addTable(const Table& newTable)
 	tables.push_back(newTable);
 }
 
-Table& Database::getTable(const string& name)
+Table* Database::getTable(const string& name)
 {
 	for (auto& table : tables)
 	{
 		if (table.getName() == name)
-			return table;
+			return &table;
 	}
 	throw runtime_error("Table with this name doesn't exist");
-	
 }
 
 string Database::getName() const
