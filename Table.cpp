@@ -41,10 +41,10 @@ void Table::addRow(Row row)
 		throw runtime_error("Not enough cells in row");
 		//w momencie wprowadzenia nulli ten if powinien zostac usuniety
 	}
-
 	for (int i = 0; i < columns.size(); ++i)
 	{
-		verifyCompatibiltyWithType(columns[i], row[i]);
+		if (row.getCells()[i].column != &this->columns[i])
+			throw runtime_error("Row is not compatible with this table");
 	}
 	rows.push_back(row);
 }
@@ -54,7 +54,7 @@ vector<Row> Table::getRows() const
 	return rows;
 }
 
-vector<Column> Table::getColumns() const
+vector<Column>& Table::getColumns()
 {
 	return columns;
 }
@@ -78,22 +78,4 @@ Column * Table::getColumn(const string & columnNameParam)
 }
 
 
-void Table::verifyCompatibiltyWithType(const Column& column, const Cell& cell) const
-{
-	//trzeba wprowadzic wzorzec strategi bo bedzie to slabo wygladalo
-	if(column.getType()=="Number")
-	{
-		try {
-			stoi(cell.getValue());
-		}
-		catch(exception ex)
-		{
-			throw runtime_error("Cell is not compatible with type");
-		}
-	}
-	else if(column.getType()=="String")
-	{
-		//zawsze ok
-	}
 
-}

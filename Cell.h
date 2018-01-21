@@ -10,11 +10,12 @@ class Cell
 {
 	string value;
 public:
-	Cell(string value);
+	Cell(string value, Column *column);
 	string getValue() const;
 	Column* column;
 private:
 	Cell() {}
+	bool isValueFitIntoType();
 	friend class boost::serialization::access;
 	template<class archive>
 	void serialize(archive& ar, const unsigned int version)

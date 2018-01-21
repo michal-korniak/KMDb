@@ -18,7 +18,7 @@ public:
 	void addTable(const Table& newTable);
 	Table* getTable(const string& name);
 	string getName() const;
-	vector<Table> getTables() const;
+	vector<Table>& getTables();
 private:
 	friend class boost::serialization::access;
 	template<class archive>

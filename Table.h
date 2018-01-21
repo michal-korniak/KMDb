@@ -16,10 +16,9 @@ public:
 	Table(const string& name);
 	string getName() const;
 	void addColumn(Column& column);
-	void verifyCompatibiltyWithType(const Column& column, const Cell& cell) const;
 	void addRow(Row row);
 	vector<Row> getRows() const;
-	vector<Column> getColumns() const;
+	vector<Column>& getColumns();
 	Column* getColumn(const string& columnName);
 private:
 	Table() {}

@@ -41,7 +41,7 @@ string Database::getName() const
 	return name;
 }
 
-vector<Table> Database::getTables() const
+vector<Table>& Database::getTables()
 {
 	return tables;
 }
