@@ -23,7 +23,7 @@
     <ProjectGuid>{461010CC-7F15-49F6-B1AB-885C8693A660}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Database</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
     <ProjectName>DatabaseC++</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -44,7 +44,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -153,6 +153,7 @@
     <ClInclude Include="ColumnType.h" />
     <ClInclude Include="ColumnTypes.h" />
     <ClInclude Include="Database.h" />
+    <ClInclude Include="FileSystem.h" />
     <ClInclude Include="Row.h" />
     <ClInclude Include="SearchHelper.h" />
     <ClInclude Include="SearchResult.h" />
@@ -169,12 +170,12 @@
     <ClCompile Include="ColumnType.cpp" />
     <ClCompile Include="ColumnTypes.cpp" />
     <ClCompile Include="Database.cpp" />
+    <ClCompile Include="FileSystem.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Row.cpp" />
     <ClCompile Include="SearchHelper.cpp" />
     <ClCompile Include="SearchResult.cpp" />
     <ClCompile Include="SelectHelper.cpp" />
-    <ClCompile Include="Serializer.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
