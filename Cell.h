@@ -22,5 +22,6 @@ private:
 	{
 		using boost::serialization::make_nvp;
 		ar & make_nvp("value", value);
+		ar & make_nvp("column", column);
 	}
 };
