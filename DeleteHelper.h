@@ -4,9 +4,10 @@
 #include "Database.h";
 #include "Table.h";
 
-class SelectHelper
+class DeleteHelper
 {
 public:
-	static Table* Select(Database *database, string query);
+	static void Delete(Database *database, string query);
 };
+
 

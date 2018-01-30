@@ -13,8 +13,6 @@ public:
 	Cell(string value, Column *column);
 	string getValue() const;
 	Column* column;
-	bool operator > (const Cell& cell) const;
-	bool operator < (const Cell& cell) const;
 private:
 	Cell() {}
 	bool isValueFitIntoType();

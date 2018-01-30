@@ -13,14 +13,11 @@ Column::Column(const string& name, ColumnType type)
 
 vector<Cell> Column::getCells()
 { 
-	auto go = this;
-	Table* thisTable = table;
-	auto rows = thisTable->getRows();
+	auto rows = table->getRows();
 	vector<Cell> result;
 
 	for (auto& row : rows) {
 		auto cells = row.getCells();
-		cells[index].column = this;
 		result.push_back(cells[index]);
 	}
 
