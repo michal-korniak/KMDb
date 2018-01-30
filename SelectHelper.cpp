@@ -97,8 +97,11 @@ Table* createResultTable(Table* table, vector<int> indexes, vector<Column*> colu
 	}
 
 	for (auto& column : columns) {
-		resultTable->addColumn(*column);
-		columnIndexes.push_back(column->index);
+		Column newColumn(column->getName(), 
+			ColumnType::convertFromString(column->getType()));
+		newColumn.index = column->index;
+		resultTable->addColumn(newColumn);
+		columnIndexes.push_back(newColumn.index);
 	}
 
 	vector<Row> newRows;
