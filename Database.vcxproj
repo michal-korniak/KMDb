@@ -23,7 +23,7 @@
     <ProjectGuid>{461010CC-7F15-49F6-B1AB-885C8693A660}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Database</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
     <ProjectName>DatabaseC++</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

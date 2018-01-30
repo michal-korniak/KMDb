@@ -12,6 +12,8 @@ const string selectStatement = "SELECT";
 const string fromStatement = "FROM";
 const string whereStatement = "WHERE";
 const string endStatment = "END";
+const string orderStatement = "ST";
+const string orderDescStatement = "STDEC";
 
 // Query Ex.: SELECT Colum1,Column2 FROM table WHERE Column1>X END
 
@@ -33,8 +35,17 @@ SearchResult SearchHelper::Search(Database* database, string query)
 	int fromPos = query.find(fromStatement);
 	int wherePos = query.find(whereStatement);
 	int endPos = query.find(endStatment);
+	int stPos = query.find(orderStatement);
 	int whereFromLength = wherePos - (fromPos + fromStatement.length());
-	int endWhereLength = endPos - (wherePos + whereStatement.length());
+
+	int endWhereLength = 0;
+
+	if (stPos != -1) {
+		endWhereLength = stPos - (wherePos + whereStatement.length());
+	}
+	else {
+		endWhereLength = endPos - (wherePos + whereStatement.length());
+	}
 
 	SearchResult searchResult;
 	vector<int> indexes;
@@ -225,9 +236,9 @@ vector<int>  conditionIndexes(WhereCondition* condition, Table* table) {
 
 	vector<Cell> cells = column->getCells();
 
-	if (column->getType() != "Number") {
+	/*if (column->getType() != "Number") {
 		cout << "Error inappropiate column type" << endl;
-	}
+	}*/
 
 	for (int i = 0; i < cells.size(); i++)
 	{
