@@ -13,6 +13,7 @@ class Column
 {
 	string name;
 	string type;
+	string tableName;
 	//vector<Cell> cells;
 public:
 	Column(const string& name, ColumnType type);
@@ -30,7 +31,9 @@ private:
 	{
 		using boost::serialization::make_nvp;
 		ar & make_nvp("name", name);
+		ar & make_nvp("table", table);
 		ar & make_nvp("type", type);
+		ar & make_nvp("index", index);
 	}
 };
 

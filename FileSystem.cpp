@@ -26,6 +26,10 @@ Database FileSystem::restore(string filename) {
 
 	// restore the schedule from the archive
 	ia >> BOOST_SERIALIZATION_NVP(s);
+	for(auto& table: s.getTables()) {
+		for (auto& column : table.getColumns())
+			column.table = &table;
+	}
 	return s;
 }
 

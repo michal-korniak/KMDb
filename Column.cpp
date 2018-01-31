@@ -13,7 +13,7 @@ Column::Column(const string& name, ColumnType type)
 
 vector<Cell> Column::getCells()
 { 
-	auto go = this;
+	auto go = this;	
 	Table* thisTable = table;
 	auto rows = thisTable->getRows();
 	vector<Cell> result;
