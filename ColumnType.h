@@ -10,4 +10,5 @@ private:
 public:
 	friend class ColumnTypes;
 	string getType() const;
+	static ColumnType convertFromString(string st);
 };

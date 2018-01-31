@@ -1,17 +1,9 @@
 ﻿#include "stdafx.h"
 #include "Table.h"
 #include <iostream>
-#include <numeric>
 
 using namespace std;
 
-
-vector<size_t> getOrder(Column* column, bool desc);
-
-template <typename T>
-vector<size_t> sort_indexes(const vector<T> &v, bool desc);
-
-void reorder(vector<Row> *rows, vector<size_t> indexes);
 Table::Table(const string& name)
 {
 
@@ -52,15 +44,7 @@ void Table::addRow(Row row)
 	for (int i = 0; i < columns.size(); ++i)
 	{
 		if (row.getCells()[i].column != &this->columns[i])
-		{
-			if(row.getCells()[i].column->getName()==this->columns[i].getName()
-				&& row.getCells()[i].column->getType() == this->columns[i].getType()) 
-			{
-				row.getCells()[i].column = &this->columns[i];
-				continue;
-			}
 			throw runtime_error("Row is not compatible with this table");
-		}
 	}
 	rows.push_back(row);
 }
@@ -75,11 +59,6 @@ vector<Column>& Table::getColumns()
 	return columns;
 }
 
-
-void Table::DeleteRow(int index)
-{
-	rows.erase(rows.begin() + index);
-}
 Column * Table::getColumn(const string & columnNameParam)
 {
 	for (auto& column : columns)
@@ -148,5 +127,25 @@ void reorder(vector<Row> *rows, vector<size_t> indexes) {
 
 }
 
+
+void Table::verifyCompatibiltyWithType(const Column& column, const Cell& cell) const
+{
+	//trzeba wprowadzic wzorzec strategi bo bedzie to slabo wygladalo
+	if (column.getType() == "Number")
+	{
+		try {
+			stoi(cell.getValue());
+		}
+		catch (exception ex)
+		{
+			throw runtime_error("Cell is not compatible with type");
+		}
+	}
+	else if (column.getType() == "String")
+	{
+		//zawsze ok
+	}
+
+}
 
 

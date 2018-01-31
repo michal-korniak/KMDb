@@ -19,7 +19,9 @@ public:
 	void addRow(Row row);
 	vector<Row> getRows() const;
 	vector<Column>& getColumns();
+	void DeleteRow(int index);
 	Column* getColumn(const string& columnName);
+	void SortTable(const string& columnName, bool desc);
 private:
 	Table() {}
 	friend class boost::serialization::access;

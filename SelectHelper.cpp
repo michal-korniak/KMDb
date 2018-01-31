@@ -11,11 +11,13 @@ const string selectStatement = "SELECT";
 const string fromStatement = "FROM";
 const string whereStatement = "WHERE";
 const string endStatment = "END";
+const string orderStatement = "ST"; 
+const string orderDescStatement = "STDEC";
 
 Table* createResultTable(Table* table, vector<int> indexes, vector<Column*> columns);
 vector<Column*> initializeColumns(Table* table, vector<string> columnNames);
 
-Table& SelectHelper::Select(Database * database, string query)
+Table* SelectHelper::Select(Database * database, string query)
 {
 	int selectPos = query.find(selectStatement);
 
@@ -47,13 +49,43 @@ Table& SelectHelper::Select(Database * database, string query)
 
 	auto searchResult = SearchHelper::Search(database, query);
 	auto columns = initializeColumns(searchResult.table,columnNames);
-	auto result = createResultTable(searchResult.table, searchResult.indexes, columns);
-	return *result;
+	Table* result = createResultTable(searchResult.table, searchResult.indexes, columns);
+
+	if (query.find(orderStatement) != -1 || query.find(orderDescStatement) != -1) {
+		int orderStatementPos = query.find(orderStatement);
+		string columnName;
+
+		int columnNameBegPos = query.find(" ", orderStatementPos + 1);
+		int columnNameEndPos = query.find(" ", columnNameBegPos + 1);
+
+		string columnNameOrder = query.substr(columnNameBegPos, columnNameEndPos - columnNameBegPos);
+		Utilities::EraseWhitespaces(columnNameOrder);
+
+		int orderDescPos = query.find(orderDescStatement);
+
+		bool sortDec = false;
+
+		if (orderDescPos != -1) {
+			sortDec = true;
+		}
+
+		result->SortTable(columnNameOrder, sortDec);
+
+	}
+
+	//fromPos = query.find(" ", fromPos + 1);
+	//int tableNamePosEnd = query.find(" ", fromPos + 1);
+
+	//string tableName = query.substr(fromPos, tableNamePosEnd - fromPos);
+	//tableName.erase(remove(tableName.begin(), tableName.end(), ' '), tableName.end());
+
+	return result;
 }
 
 Table* createResultTable(Table* table, vector<int> indexes, vector<Column*> columns) {
 
-	Table resultTable("result");
+	Table* resultTable = new Table("result");
+	//Table resultTable("result");
 
 	vector<Row> tableRows;
 	tableRows = table->getRows();
@@ -65,8 +97,11 @@ Table* createResultTable(Table* table, vector<int> indexes, vector<Column*> colu
 	}
 
 	for (auto& column : columns) {
-		resultTable.addColumn(*column);
-		columnIndexes.push_back(column->index);
+		Column newColumn(column->getName(), 
+			ColumnType::convertFromString(column->getType()));
+		newColumn.index = column->index;
+		resultTable->addColumn(newColumn);
+		columnIndexes.push_back(newColumn.index);
 	}
 
 	vector<Row> newRows;
@@ -85,10 +120,10 @@ Table* createResultTable(Table* table, vector<int> indexes, vector<Column*> colu
 	}
 
 	for (auto& row : newRows) {
-		resultTable.addRow(row);
+		resultTable->addRow(row);
 	}
 
-	return &resultTable;
+	return resultTable;
 }
 
 vector<Column*> initializeColumns(Table* table, vector<string> columnNames) {
@@ -99,7 +134,7 @@ vector<Column*> initializeColumns(Table* table, vector<string> columnNames) {
 	{
 		auto column = table->getColumn(columnName);
 		if (column == nullptr) {
-			cout << "Column does not exist " + columnName;
+			cout << "Column does not exist " + columnName << endl;;
 		}
 		else {
 			columns.push_back(column);

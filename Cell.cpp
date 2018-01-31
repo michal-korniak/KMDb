@@ -15,6 +15,23 @@ string Cell::getValue() const
 {
 	return value;
 }
+
+bool Cell::operator>(const Cell & cell) const
+{
+	if (column->getType() == "Number") {
+		return stoi(value) > stoi(cell.value);
+	}else
+		return value > cell.value;
+}
+
+bool Cell::operator<(const Cell & cell) const
+{
+	if (column->getType() == "Number") {
+		return stoi(value) < stoi(cell.value);
+	}
+	else
+		return value < cell.value;
+}
 bool Cell::isValueFitIntoType()
 {
 	//trzeba wprowadzic wzorzec strategi bo bedzie to slabo wygladalo
