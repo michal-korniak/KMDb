@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "SelectHelper.h"
 #include <iostream>
 #include "Utilities.h"

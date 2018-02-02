@@ -1,8 +1,8 @@
 #pragma once
 
 #include "Cell.h"
-#include "Database.h";
-#include "Table.h";
+#include "Database.h"
+#include "Table.h"
 
 class SelectHelper
 {

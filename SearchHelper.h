@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Cell.h"
-#include "Database.h";
+#include "Database.h"
 #include "Table.h"
 #include "SearchResult.h"
 

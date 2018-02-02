@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build hello world",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "*.cpp",
+                "-g",
+                "-std=c++11",
+                "-lboost_system",
+                "-lboost_serialization",
+                "-lboost_filesystem",
+                
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

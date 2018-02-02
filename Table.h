@@ -14,6 +14,7 @@ class Table
 	vector<Row> rows;
 public:
 	Table(const string& name);
+	Table() {}
 	string getName() const;
 	void addColumn(Column& column);
 	void addRow(Row row);
@@ -23,7 +24,6 @@ public:
 	Column* getColumn(const string& columnName);
 	void SortTable(const string& columnName, bool desc);
 private:
-	Table() {}
 	friend class boost::serialization::access;
 	template<class archive>
 	void serialize(archive& ar, const unsigned int version)

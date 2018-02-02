@@ -1,5 +1,4 @@
-﻿#include "stdafx.h"
-#include "Column.h"
+﻿#include "Column.h"
 #include "Table.h"
 #include "Row.h"
 #include <vector>

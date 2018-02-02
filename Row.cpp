@@ -1,5 +1,4 @@
-﻿#include "stdafx.h"
-#include "Row.h"
+﻿#include "Row.h"
 
 Row& Row::addCell(Cell cell)
 {

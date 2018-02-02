@@ -11,12 +11,12 @@ class Cell
 	string value;
 public:
 	Cell(string value, Column *column);
+	Cell() {}
 	string getValue() const;
 	Column* column;
 	bool operator > (const Cell& cell) const;
 	bool operator < (const Cell& cell) const;
 private:
-	Cell() {}
 	bool isValueFitIntoType();
 	friend class boost::serialization::access;
 	template<class archive>

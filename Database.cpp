@@ -1,5 +1,4 @@
-﻿#include "stdafx.h"
-#include "Database.h"
+﻿#include "Database.h"
 #include "FileSystem.h"
 
 Database::Database() {

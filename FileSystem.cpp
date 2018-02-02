@@ -1,16 +1,15 @@
-﻿#include "stdafx.h"
-#include "FileSystem.h"
-#include <windows.h>
+﻿#include "FileSystem.h"
 #include <iostream>
-#include <filesystem>
+#include "boost/filesystem.hpp"
 
 using namespace std;
+using namespace boost::filesystem;
 
-const string FileSystem::path = "Databases/";
+const string FileSystem::path = "/home/teaper/KMDb/";
 
 void FileSystem::save(const Database& s) {
 	// make an archive
-	CreateDirectory("Databases", NULL);
+	boost::filesystem::create_directory(path);
 	ofstream ofs(path + s.getName() + ".xml");
 	assert(ofs.good());
 	boost::archive::xml_oarchive oa(ofs);
@@ -30,27 +29,24 @@ Database FileSystem::restore(string filename) {
 		for (auto& column : table.getColumns())
 			column.table = &table;
 	}
+	for(auto& )
 	return s;
 }
 
 vector<string> FileSystem::getAllDbNames() {
 
 	vector<string> names;
-	string search_path = path + "/*.*";
-	WIN32_FIND_DATA fd;
-	HANDLE hFind = ::FindFirstFile(search_path.c_str(), &fd);
-	if (hFind != INVALID_HANDLE_VALUE) {
-		do {
-			// read all (real) files in current folder
-			// , delete '!' read other 2 default folder . and ..
-			if (!(fd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)) {
-				string nameWithExt = fd.cFileName;
-				string nameWithoutExt = nameWithExt.substr(0, nameWithExt.rfind("."));
-				names.push_back(nameWithoutExt);
-			}
+	boost::filesystem::path p(path);
+	
+	if ( exists(p) ) 
+	{
+    	directory_iterator end_itr;
+		// cycle through the directory
+		for (directory_iterator itr(p); itr != end_itr; ++itr)
+		{
+			string current_file = itr->path().stem().string();
+			names.push_back(current_file);
 		}
-		while (::FindNextFile(hFind, &fd));
-		FindClose(hFind);
 	}
 	return names;
 }

@@ -1,5 +1,4 @@
-﻿#include "stdafx.h"
-#include "Cell.h"
+﻿#include "Cell.h"
 #include "Column.h"
 
 Cell::Cell(string value, Column *column)

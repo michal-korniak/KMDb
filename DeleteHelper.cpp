@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "DeleteHelper.h"
 #include <iostream>
 #include "Utilities.h"

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <vector>
-#include "Table.h";
+#include "Table.h"
 
 class SearchResult
 {

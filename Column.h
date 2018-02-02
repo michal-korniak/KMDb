@@ -17,6 +17,7 @@ class Column
 	//vector<Cell> cells;
 public:
 	Column(const string& name, ColumnType type);
+	Column() {}
 	vector<Cell> getCells();
 	//Column& addCell(Cell cell);
 	string getName() const;
@@ -24,7 +25,6 @@ public:
 	Table* table;
 	int index;
 private:
-	Column() {}
 	friend class boost::serialization::access;
 	template<class archive>
 	void serialize(archive& ar, const unsigned int version)

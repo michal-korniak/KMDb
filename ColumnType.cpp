@@ -1,5 +1,5 @@
-﻿#include "stdafx.h"
-#include "ColumnType.h"
+﻿#include "ColumnType.h"
+#include <stdexcept>
 
 ColumnType::ColumnType(string type)
 {
